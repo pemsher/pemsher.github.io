@@ -1,1 +1,6 @@
-theme: jekyll-theme-cayman
+# enable markdown that is compatible with GitHub Pages
+markdown: kramdown
+kramdown:
+  input: GFM
+  math_engine: mathjax
+error_mode: lax
