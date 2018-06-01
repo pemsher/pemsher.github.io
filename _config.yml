@@ -4,4 +4,4 @@ kramdown:
   input: GFM
   math_engine: mathjax
 error_mode: lax
-remote_theme: benbalter/retlab
+remote_theme: cayman
