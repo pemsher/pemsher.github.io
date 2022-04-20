@@ -1,0 +1,29 @@
+[alias]
+  co = checkout
+  # Log display from screencast, with train tracks.
+  lg = log --graph --pretty='%Cred%h%Creset |%C(yellow)%d %Creset %s %Cgreen(%cr)%Creset %C(cyan)[%an]%Creset'
+  lp = log --pretty='%Cred%h%Creset |%C(yellow)%d %Creset %s %Cgreen(%cr)%Creset %C(cyan)[%an]%Creset'
+  # Alternate log display from Scott Chacon
+  lol = log --pretty=oneline --abbrev-commit --graph --decorate
+  # Other useful aliases:
+  unstage = reset HEAD
+  staged = diff --cached
+  unstaged = diff
+  # current-branch = !git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'
+  # Usage: git track origin/feature-123-login-form
+  track = checkout -t
+[user]
+	name = Pemba Sherpa
+	email = pemba.sherpa@sage.com
+[diff]
+	tool = diffmerge
+[difftool "diffmerge"]
+	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
+  trusedExitCode = true
+[mergetool "diffmerge"]
+	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
+	trustExitCode = true
+[mergetool]
+	keepBackup = false
+[difftool]
+	prompt = false
