@@ -25,4 +25,3 @@ jobs:
           branch: master
           github_token: ${{ secrets.GH_ACTION_TOKEN }}
           repository: pemsher/pemsher.github.io
-          persist-credentials: true
