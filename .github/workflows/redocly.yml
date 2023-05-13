@@ -16,17 +16,16 @@ jobs:
       - name: Build HTML
         run: |
           # Replace this command with your build command
-          mkdir -p ${{ github.workspace }}/dist
+          mkdir -p ${{ github.workspace }}/pub
           echo "<html><body><h1>Hello, world!</h1></body></html>" > index.html
-          mv index.html ${{ github.workspace }}/dist
+          mv index.html ${{ github.workspace }}/pub
           cd ${{ github.workspace }}/dist
           ls 
-          #mv index.html ${{ github.workspace }}/dist
       - name: Upload static page to different repository
         uses: ad-m/github-push-action@master
         with:
           branch: master
-          directory: ${{ github.workspace }}/dist/
+          directory: ${{ github.workspace }}/pub/
           github_token: ${{ secrets.GH_ACTION_TOKEN }}
           repository: pemsher/pemsher.github.io
           force: true
