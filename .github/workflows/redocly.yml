@@ -15,9 +15,22 @@ jobs:
         run: |
           # Replace this command with your build command
           echo "<html><body><h1>Hello, world!</h1></body></html>" > index.html
-      - name: Deploy site
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Clone other repository
+        uses: actions/checkout@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./index.html
-          publish_branch: gh-pages
+          repository: pemsher/pemsher.github.io
+          token: ${{ secrets.GH_TOKEN }}
+          ref: master
+
+      - name: Copy static content
+        run: |
+          # Replace this command with your command to copy static content
+          cp -r index.html .
+
+      - name: Push changes
+        run: |
+          git config --global user.email "<email>"
+          git config --global user.name "<username>"
+          git add .
+          git commit -m "Push static content from PR #${{ github.event.pull_request.number }}"
+          git push
