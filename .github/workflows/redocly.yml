@@ -19,7 +19,7 @@ jobs:
           mkdir -p ${{ github.workspace }}/pub
           echo "<html><body><h1>Hello, world!</h1></body></html>" > index.html
           mv index.html ${{ github.workspace }}/pub
-          cd ${{ github.workspace }}/dist
+          cd ${{ github.workspace }}/pub
           ls 
       - name: Upload static page to different repository
         uses: ad-m/github-push-action@master
