@@ -18,15 +18,15 @@ jobs:
           # Replace this command with your build command
           mkdir -p ${{ github.workspace }}/dist
           echo "<html><body><h1>Hello, world!</h1></body></html>" > index.html
-          cp index.html ${{ github.workspace }}/dist
-          cd ${{ github.workspace }}/dist
+          cp index.html ./dist
+          cd ./dist
           ls 
           #mv index.html ${{ github.workspace }}/dist
       - name: Upload static page to different repository
         uses: ad-m/github-push-action@master
         with:
           branch: master
-          directory: ${{ github.workspace }}/dist/
+          directory: dist/
           github_token: ${{ secrets.GH_ACTION_TOKEN }}
           repository: pemsher/pemsher.github.io
           force: true
