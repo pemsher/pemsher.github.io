@@ -24,4 +24,4 @@ jobs:
           ref: master
           token: ${{ secrets.GITHUB_TOKEN }}
           repository: pemsher/pemsher.github.io
-          presist-credentials: true
+          persist-credentials: true
