@@ -15,9 +15,9 @@ jobs:
         run: |
           # Replace this command with your build command
           echo "<html><body><h1>Hello, world!</h1></body></html>" > index.html
-      - name: Set URL
-        id: url
-        run: |
-          # Replace this URL with your desired URL
-          echo "::set-output name=url::https://pemsher.github.io/$(git rev-parse --short=8 HEAD)/index.html"
-
+      - name: Deploy site
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./index.html
+          publish_branch: gh-pages
