@@ -20,5 +20,4 @@ jobs:
         run: |
           # Replace this URL with your desired URL
           echo "::set-output name=url::https://pemsher.github.io/$(git rev-parse --short=8 HEAD)/index.html"
-      - name: Print URL
-        run: echo "Static HTML page URL: ${{ steps.url.outputs.url }}"
+
