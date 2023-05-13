@@ -25,7 +25,7 @@ jobs:
       - name: Copy static content
         run: |
           # Replace this command with your command to copy static content
-          cp  ./index.html .
+          ls
 
       - name: Push changes
         run: |
