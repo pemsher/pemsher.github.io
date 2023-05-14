@@ -24,7 +24,7 @@ jobs:
       - name: Bundle API
         run: openapi bundle petstore.yaml -o spec.bundled.yaml
       - name: Generate HTML
-        run: npx @redoc-cli bundle spec.bundled.yaml -o index.html
+        run: npx @redocly/cli bundle spec.bundled.yaml -o index.html
       - name: Commit files
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
