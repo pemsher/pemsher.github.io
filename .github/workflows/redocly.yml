@@ -35,7 +35,7 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           branch: master
-          directory: .
+          directory: pets/
           github_token: ${{ secrets.GH_ACTION_TOKEN }}
           repository: pemsher/pemsher.github.io
           force: true
