@@ -24,7 +24,9 @@ jobs:
       - name: Bundle API
         run: redocly bundle petstore.yaml -o spec.bundled.yaml
       - name: Generate HTML
-        run: redocly build-docs spec.bundled.yaml -o index.html
+        run: |
+          mkdir pets
+          redocly build-docs spec.bundled.yaml -o ./pets/index.html
       - name: Commit files
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
