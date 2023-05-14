@@ -18,8 +18,8 @@ jobs:
           # Replace this command with your build command
           mkdir -p ${{ github.workspace }}/pub
           echo "<html><body><h1>Hello, world!</h1></body></html>" > index.html
-          mv index.html ${{ github.workspace }}/pub
-          cd ${{ github.workspace }}/pub
+          #mv index.html ${{ github.workspace }}/pub
+          #cd ${{ github.workspace }}/pub
           ls 
       - name: Commit files
         run: |
@@ -30,7 +30,7 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           branch: master
-          directory: ${{ github.workspace }}/pub
+          directory: .
           github_token: ${{ secrets.GH_ACTION_TOKEN }}
           repository: pemsher/pemsher.github.io
           force: true
